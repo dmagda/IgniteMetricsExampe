@@ -19,16 +19,5 @@ public class IgniteMetricsExample {
                 System.out.println("average get time = " + cache.metrics().getAverageGetTime());
             }
         }, 1000, 2000);
-
-        //Generating dummy load.
-        while (true) {
-            for (int i = 0; i < 1000; i++) {
-                cache.put(i, i);
-            }
-
-            for (int i = 0; i < 500; i++) {
-                cache.get(i);
-            }
-        }
     }
 }
